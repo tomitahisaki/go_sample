@@ -1,9 +1,9 @@
 package main
 
 import (
+	"go_sample/api/routes"
 	database "go_sample/config"
 	"go_sample/models"
-	"go_sample/routes"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -16,13 +16,10 @@ func main() {
 	database.Connect()
 	database.DB.AutoMigrate(&models.ToDo{})
 
-	// ルーティング
-	r.GET("/todos", routes.GetToDos)
-	r.GET("/todos/:id", routes.GetToDoByID)
-	r.POST("/todos", routes.CreateToDo)
-	r.PUT("/todos/:id", routes.UpdateToDo)
-	r.DELETE("/todos/:id", routes.DeleteToDo)
+	// ルーター設定
+	routes.RegisterToDoRoutes(r)
 
+	// サーバー起動
 	log.Println("Server is running on http://localhost:8080")
 	r.Run(":8080")
 }
