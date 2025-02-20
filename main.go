@@ -1,7 +1,7 @@
 package main
 
 import (
-	"go_sample/database"
+	database "go_sample/config"
 	"go_sample/models"
 	"go_sample/routes"
 	"log"

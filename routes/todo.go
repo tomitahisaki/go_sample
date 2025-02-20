@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"go_sample/database"
+	database "go_sample/config"
 	"go_sample/models"
 	"net/http"
 
