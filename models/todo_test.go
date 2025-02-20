@@ -12,6 +12,8 @@ func TestToDoTitle(t *testing.T) {
     Description: "Test Description",
     Completed:   false,
   }
-
+  
   assert.Equal(t, "Test Title", todo.Title, "The title should be 'Test Title'")
+  assert.Equal(t, "Test Description", todo.Description, "The description should be 'Test Description'")
+  assert.Equal(t, false, todo.Completed, "The completed status should be false")
 }
